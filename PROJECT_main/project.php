@@ -1,41 +1,50 @@
 <?php
 
+//$question =  " kdmmk4     emme";
+//$question = "bjbbebb,   hdvheg";
 $question = $_POST['question'];
+//$question = "bsb,sbsj?";
+// function strip_exc_whitespaces($input){
+//     $input = preg_replace('/\s+/', ' ', $input);
+//     return trim($input);
+// }
+// echo "<pre>";
+// echo strip_exc_whitespaces($question);
+// echo "</pre>";
+// echo "<pre>";
+// echo $question;
+// echo "</pre>";
 
-//ВАЖНО РАБОТИ И КАТО ЕДНО!
-function correcting_question($input){
-   // $comma = ",";
-   // $interval = ' ';
-   //$input = str_replace($comma, "," . $interval, $input);
-    
-     //Correcting spacing around punctuation
-     $comma_interval = ',' . ' ';
-
-     $input = preg_replace('/\s*,\s*/', $comma_interval, $input);
-
-     //Correcting whitespace
-     $input = preg_replace('/\s+/', ' ', $input);
-
-     //Correcting question mark
-     $input = preg_replace('/\?+/', '?', $input);
-
-      $mark = '?';
-      //$mark = strlen($input) -1; 
-        if(!function_exists($mark)) {
-          return ucfirst(trim($input)) . $mark;
-        }
-        
-        return ucfirst(trim($input));
+function spacing_around_punctuation($input){
+   $comma = ",";
+   $interval = ' ';
+     $input = str_replace($comma, "," . $interval, $input);
+     return ucfirst(trim($input));
 }
 echo "<pre>";
-echo "Submitted question:" . $question;
-echo "<br>";
-echo "Corrected question:" . correcting_question($question);
+echo "Corrected question:" . spacing_around_punctuation($question);
 echo "</pre>";
 
-// else{
-//           return ucfirst(trim($input)) . str_replace($mark, '', $input);
-//        }
-// else{
-       //  preg_replace($mark, $input, $input);
-       // }
+// function correcting_capital_letters($input){
+//     return ucfirst($input);  
+// }
+// echo "<pre>";
+// echo correcting_capital_letters($question);
+// echo "</pre>";
+
+// function checking_the_question_mark($input){
+//  $mark = "?";
+//  $marks = $new_mark > 1;
+//     $new_mark = str_split($mark);
+//  if (count($new_mark) > 1) {
+//    str_replace($marks, $mark , $input);
+//  }
+// }
+// echo checking_the_question_mark($question);
+// $new_input =str_split($input);
+//  $replace = "?";
+//  $pattern = [] ;
+//  $patterns[0] ='/@/';
+//     if ([count($new_input) - 1] > 1) {
+//      return preg_replace($patterns, $replace, $input);
+//     }
