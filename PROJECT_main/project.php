@@ -32,10 +32,3 @@ echo "Submitted question:" . $question;
 echo "<br>";
 echo "Corrected question:" . correcting_question($question);
 echo "</pre>";
-
-// else{
-//           return ucfirst(trim($input)) . str_replace($mark, '', $input);
-//        }
-// else{
-       //  preg_replace($mark, $input, $input);
-       // }
