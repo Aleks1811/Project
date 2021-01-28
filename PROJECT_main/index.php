@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-	   <form action="project_var(c)8.php" method="POST" class="form">
+	   <form action="project.php" method="POST" class="form">
 		<input type="text" name="question" placeholder="Enter a question......" class="question_box"><br>
 		<input type="submit" name="submit" value="correct" class="btn">
 		
